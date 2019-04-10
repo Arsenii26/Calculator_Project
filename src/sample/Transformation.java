@@ -1,7 +1,7 @@
 package sample;
 
 
-public class TransformationList {
+public class Transformation {
     private double num; //value witch been entered by user for calculations
 
 
@@ -9,7 +9,7 @@ public class TransformationList {
      * Constructor
      */
 
-    public TransformationList(double num) {
+    public Transformation(double num) {
         this.num = num;
     }
 

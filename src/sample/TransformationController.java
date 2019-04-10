@@ -141,8 +141,8 @@ public class TransformationController {
         String decimalPlaces = onMath.getText();
         Double number = numDoub(value);
         Integer round = numPlac(decimalPlaces);
-        TransformationList transformationList = new TransformationList(number);
-        onGetResult.setText(transformationList.Celsius_to_Fahrenheit(number, round) + "");
+        Transformation transformation = new Transformation(number);
+        onGetResult.setText(transformation.Celsius_to_Fahrenheit(number, round) + "");
     }
 
     /**
@@ -154,8 +154,8 @@ public class TransformationController {
         String decimalPlaces = onMath.getText();
         Double number = numDoub(value);
         Integer round = numPlac(decimalPlaces);
-        TransformationList transformationList = new TransformationList(number);
-        onGetResult.setText(transformationList.Fahrenheit_to_Celsius(number, round) + "");
+        Transformation transformation = new Transformation(number);
+        onGetResult.setText(transformation.Fahrenheit_to_Celsius(number, round) + "");
     }
 
     /**
@@ -167,8 +167,8 @@ public class TransformationController {
         String decimalPlaces = onMath.getText();
         Double number = numDoub(value);
         Integer round = numPlac(decimalPlaces);
-        TransformationList transformationList = new TransformationList(number);
-        onGetResult.setText(transformationList.Feet_to_Meters(number, round) + "");
+        Transformation transformation = new Transformation(number);
+        onGetResult.setText(transformation.Feet_to_Meters(number, round) + "");
     }
 
     /**
@@ -180,8 +180,8 @@ public class TransformationController {
         String decimalPlaces = onMath.getText();
         Double number = numDoub(value);
         Integer round = numPlac(decimalPlaces);
-        TransformationList transformationList = new TransformationList(number);
-        onGetResult.setText(transformationList.Meters_to_Feet(number, round) + "");
+        Transformation transformation = new Transformation(number);
+        onGetResult.setText(transformation.Meters_to_Feet(number, round) + "");
     }
 
     /**
@@ -193,8 +193,8 @@ public class TransformationController {
         String decimalPlaces = onMath.getText();
         Double number = numDoub(value);
         Integer round = numPlac(decimalPlaces);
-        TransformationList transformationList = new TransformationList(number);
-        onGetResult.setText(transformationList.Inches_to_Centimeters(number, round) + "");
+        Transformation transformation = new Transformation(number);
+        onGetResult.setText(transformation.Inches_to_Centimeters(number, round) + "");
     }
 
     /**
@@ -206,8 +206,8 @@ public class TransformationController {
         String decimalPlaces = onMath.getText();
         Double number = numDoub(value);
         Integer round = numPlac(decimalPlaces);
-        TransformationList transformationList = new TransformationList(number);
-        onGetResult.setText(transformationList.Centimeters_to_Inches(number, round) + "");
+        Transformation transformation = new Transformation(number);
+        onGetResult.setText(transformation.Centimeters_to_Inches(number, round) + "");
     }
 
     /**
@@ -219,8 +219,8 @@ public class TransformationController {
         String decimalPlaces = onMath.getText();
         Double number = numDoub(value);
         Integer round = numPlac(decimalPlaces);
-        TransformationList transformationList = new TransformationList(number);
-        onGetResult.setText(transformationList.Pounds_to_Kilograms(number, round) + "");
+        Transformation transformation = new Transformation(number);
+        onGetResult.setText(transformation.Pounds_to_Kilograms(number, round) + "");
     }
 
     /**
@@ -232,8 +232,8 @@ public class TransformationController {
         String decimalPlaces = onMath.getText();
         Double number = numDoub(value);
         Integer round = numPlac(decimalPlaces);
-        TransformationList transformationList = new TransformationList(number);
-        onGetResult.setText(transformationList.Kilograms_to_Pounds(number, round) + "");
+        Transformation transformation = new Transformation(number);
+        onGetResult.setText(transformation.Kilograms_to_Pounds(number, round) + "");
     }
 
 
