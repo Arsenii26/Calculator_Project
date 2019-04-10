@@ -27,7 +27,7 @@
             <font>
                 <Font name="System Bold Italic" size="15.0" />
             </font></Label>
-        <TextField fx:id="onEnterValue" layoutX="86.0" layoutY="87.0" prefHeight="31.0" prefWidth="218.0" text="0" />
+        <TextField fx:id="onEnterValue" layoutX="86.0" layoutY="87.0" prefHeight="31.0" prefWidth="218.0" />
         <TextArea fx:id="onGetResult" editable="false" layoutX="340.0" layoutY="87.0" prefHeight="38.0" prefWidth="209.0" wrapText="true" />
         <Label layoutX="423.0" layoutY="66.0" text="Result">
             <font>
@@ -35,7 +35,7 @@
             </font>
         </Label>
         <Button fx:id="btnSave" layoutX="236.0" layoutY="495.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="128.0" text="Save result" />
-        <TextField fx:id="btnMath" layoutX="212.0" layoutY="125.0" prefHeight="31.0" prefWidth="92.0" text="0" />
+        <TextField fx:id="onMath" layoutX="212.0" layoutY="125.0" prefHeight="31.0" prefWidth="92.0" text="0" />
         <Label layoutX="95.0" layoutY="130.0" text="Decimal places" />
         <Button fx:id="btnHistory" layoutX="395.0" layoutY="495.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="History" />
     </children>

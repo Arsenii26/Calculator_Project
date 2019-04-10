@@ -45,13 +45,12 @@ public class TransformationController {
     @FXML
     private TextField onEnterValue; //Place for entering number
     @FXML
-    private TextField btnMath; //number of decimal places
+    private TextField onMath; //Number of decimal places
     @FXML
-    private Button btnHistory; //open history window
+    private Button btnHistory; //Open history window
 
-    //Objects for calling methods from other java classes
-    TransformationList transformationList = new TransformationList();
-    TransformationController tc;
+    //Object for calling methods from other java class
+    private TransformationList transformationList = new TransformationList();
 
     // This method is automatically called when the window opens, after the FXML file has been loaded.
     @FXML
@@ -124,7 +123,7 @@ public class TransformationController {
      * This method gets value from first text field and transfer it to double value. Otherwise throws exception and shows alert dialog
      */
 
-    private static double numDoub(String string) {
+    private double numDoub(String string) {
         double number = 0.0;
         try {
             number = Double.parseDouble(string);
@@ -141,7 +140,7 @@ public class TransformationController {
     /**
      * This method gets value from second text field and transfer it to integer value. Otherwise throws exception and shows alert dialog
      */
-    private static int numPlac(String numb) {
+    private int numPlac(String numb) {
         int round = 0;
         try {
             round = Integer.parseInt(numb);
@@ -158,13 +157,13 @@ public class TransformationController {
 
     /**
      * Method which will read the string values, put them to numDoub() and numPlac() methods and will calculate formula from
-     * transformationList class Celsius_to_Faharenheit
+     * transformationList class Celsius_to_Fahrenheit
      */
     private void calcCelsiustoFahrenheit() {
-        String string = onEnterValue.getText();
-        String numb = btnMath.getText(); //getting the text for number of precision
-        Double number = tc.numDoub(string);
-        Integer round = tc.numPlac(numb);
+        String value = onEnterValue.getText();
+        String decimalPlaces = onMath.getText();
+        Double number = numDoub(value);
+        Integer round = numPlac(decimalPlaces);
         TransformationList transformationList = new TransformationList(number);
         onGetResult.setText(transformationList.Celsius_to_Fahrenheit(number, round) + "");
     }
@@ -174,10 +173,10 @@ public class TransformationController {
      * transformationList class Fahrenheit_to_Celsius
      */
     private void calcFahrenheittoCelsius() {
-        String string = onEnterValue.getText();
-        String numb = btnMath.getText(); //getting the text for number of precision
-        Double number = tc.numDoub(string);
-        Integer round = tc.numPlac(numb);
+        String value = onEnterValue.getText();
+        String decimalPlaces = onMath.getText();
+        Double number = numDoub(value);
+        Integer round = numPlac(decimalPlaces);
         TransformationList transformationList = new TransformationList(number);
         onGetResult.setText(transformationList.Fahrenheit_to_Celsius(number, round) + "");
     }
@@ -187,10 +186,10 @@ public class TransformationController {
      * transformationList class Feet_to_Meters
      */
     private void calcFeettoMeters() {
-        String string = onEnterValue.getText();
-        String numb = btnMath.getText(); //getting the text for number of precision
-        Double number = tc.numDoub(string);
-        Integer round = tc.numPlac(numb);
+        String value = onEnterValue.getText();
+        String decimalPlaces = onMath.getText();
+        Double number = numDoub(value);
+        Integer round = numPlac(decimalPlaces);
         TransformationList transformationList = new TransformationList(number);
         onGetResult.setText(transformationList.Feet_to_Meters(number, round) + "");
     }
@@ -200,10 +199,10 @@ public class TransformationController {
      * transformationList class Meters_to_Feet
      */
     private void calcMeterstoFeet() {
-        String string = onEnterValue.getText();
-        String numb = btnMath.getText(); //getting the text for number of precision
-        Double number = tc.numDoub(string);
-        Integer round = tc.numPlac(numb);
+        String value = onEnterValue.getText();
+        String decimalPlaces = onMath.getText();
+        Double number = numDoub(value);
+        Integer round = numPlac(decimalPlaces);
         TransformationList transformationList = new TransformationList(number);
         onGetResult.setText(transformationList.Meters_to_Feet(number, round) + "");
     }
@@ -213,10 +212,10 @@ public class TransformationController {
      * transformationList class Inches_to_Centimeters
      */
     private void calcInchestoCentimeters() {
-        String string = onEnterValue.getText();
-        String numb = btnMath.getText(); //getting the text for number of precision
-        Double number = tc.numDoub(string);
-        Integer round = tc.numPlac(numb);
+        String value = onEnterValue.getText();
+        String decimalPlaces = onMath.getText();
+        Double number = numDoub(value);
+        Integer round = numPlac(decimalPlaces);
         TransformationList transformationList = new TransformationList(number);
         onGetResult.setText(transformationList.Inches_to_Centimeters(number, round) + "");
     }
@@ -226,10 +225,10 @@ public class TransformationController {
      * transformationList class Centimeters_to_Inches
      */
     private void calcCentimeterstoInches() {
-        String string = onEnterValue.getText();
-        String numb = btnMath.getText(); //getting the text for number of precision
-        Double number = tc.numDoub(string);
-        Integer round = tc.numPlac(numb);
+        String value = onEnterValue.getText();
+        String decimalPlaces = onMath.getText();
+        Double number = numDoub(value);
+        Integer round = numPlac(decimalPlaces);
         TransformationList transformationList = new TransformationList(number);
         onGetResult.setText(transformationList.Centimeters_to_Inches(number, round) + "");
     }
@@ -239,10 +238,10 @@ public class TransformationController {
      * transformationList class Pounds_to_Kilograms
      */
     private void calcPoundstoKilograms() {
-        String string = onEnterValue.getText();
-        String numb = btnMath.getText(); //getting the text for number of precision
-        Double number = tc.numDoub(string);
-        Integer round = tc.numPlac(numb);
+        String value = onEnterValue.getText();
+        String decimalPlaces = onMath.getText();
+        Double number = numDoub(value);
+        Integer round = numPlac(decimalPlaces);
         TransformationList transformationList = new TransformationList(number);
         onGetResult.setText(transformationList.Pounds_to_Kilograms(number, round) + "");
     }
@@ -252,10 +251,10 @@ public class TransformationController {
      * transformationList class Kilograms_to_Pounds
      */
     private void calcKilogramstoPounds() {
-        String string = onEnterValue.getText();
-        String numb = btnMath.getText(); //getting the text for number of precision
-        Double number = tc.numDoub(string);
-        Integer round = tc.numPlac(numb);
+        String value = onEnterValue.getText();
+        String decimalPlaces = onMath.getText();
+        Double number = numDoub(value);
+        Integer round = numPlac(decimalPlaces);
         TransformationList transformationList = new TransformationList(number);
         onGetResult.setText(transformationList.Kilograms_to_Pounds(number, round) + "");
     }
@@ -267,54 +266,68 @@ public class TransformationController {
     private void onClearClicked() {  //clearing all textFields and textArea inside the window
         onGetResult.setText("");
         onEnterValue.setText("");
-        btnMath.setText(0 + "");
-
-        //just tried to check array list
-//        for (int i = 0; i < transformationList._list.size(); i++) {
-//            System.out.println(transformationList._list.get(i).toString());
-//        }
+        onMath.setText(0 + "");
     }
 
 
     /**
-     * Save in the history text file in the same folder with project
+     * Method checking that string value is number
+     */
+    private static boolean isNumeric(String strNum) {
+        return strNum.matches("-?\\d+(\\.\\d+)?");
+    }
+
+    /**
+     * Save in the history text file in the same folder with project. Before checking that fields are not empty or not a number values
      */
     private void onSave() {  //clearing all textFields and textArea inside the window
 
-        String string = onEnterValue.getText(); //getting the text for number of precision
-        String string2 = onGetResult.getText(); //getting the text for number of precision
-        transformationList.load(string, string2);
-        if (transformationList._list.size() == 0) {
-            return;    // Don't overwrite the file with an empty list
-        }
 
-        PrintWriter writer = null;
-        try {
-            File fileDescriptor = new File("Transformation.txt");
-            writer = new PrintWriter(fileDescriptor);
-            for (int i = 0; i < transformationList._list.size(); i++) {
-                //Transformation p = tf.get(i);
-                Transformation p = transformationList._list.get(i);//saving!
-                writer.println("Value: " + p.getFrom() + " -----> Result: " +
-                        p.getTo());
-            }
-        } catch (FileNotFoundException e) {
+        String string = onEnterValue.getText(); //getting the text from value field
+        String string2 = onGetResult.getText(); //getting the text from result field
+        String string3 = onMath.getText(); //getting the text from number of decimal places field
+
+        //checking that all fields are numeric values, if not then show the error message
+        if (!isNumeric(string) || !isNumeric(string2) || !isNumeric(string3)) {
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Error");
-            alert.setHeaderText("Error");
-            alert.setContentText("Ooops, File not been saved!");
+            alert.setHeaderText("Can't save the file");
+            alert.setContentText("One of the fields not a number!");
             alert.showAndWait();
-        } finally {
-            if (writer != null) {
-                //display the result if it has the success
-                Alert alert = new Alert(Alert.AlertType.INFORMATION);
-                alert.setTitle("Success");
-                alert.setHeaderText("Success");
-                alert.setContentText("File been saved!");
+        } else {
+            transformationList.load(string, string2); //if all three fields are numeric then saving to the list
+            //}
+            if (transformationList._list.size() == 0) {
+                return;    // Don't overwrite the file with an empty list
+            }
 
+            PrintWriter writer = null;
+            try {
+                File fileDescriptor = new File("Transformation.txt");
+                writer = new PrintWriter(fileDescriptor);
+                for (int i = 0; i < transformationList._list.size(); i++) {
+                    Transformation p = transformationList._list.get(i);  //getting object of array list and saving it to the text file
+                    writer.println("Value: " + p.getFrom() + " -----> Result: " +
+                            p.getTo());
+                }
+            } catch (FileNotFoundException e) {
+                Alert alert = new Alert(Alert.AlertType.ERROR);
+                alert.setTitle("Error");
+                alert.setHeaderText("Error");
+                alert.setContentText("Ooops, File not been saved!");
                 alert.showAndWait();
-                writer.close();
+            } finally {
+                if (writer != null) {
+                    //display the result if it has the success
+                    Alert alert = new Alert(Alert.AlertType.INFORMATION);
+                    alert.setTitle("Success");
+                    alert.setHeaderText("Success");
+                    alert.setContentText("File been saved!");
 
+                    alert.showAndWait();
+                    writer.close();
+
+                }
             }
         }
     }
@@ -339,7 +352,7 @@ public class TransformationController {
     private void onHistoryClick() {
         try {
             AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("History.fxml"));
-            Scene scene = new Scene(root, 600, 500);
+            Scene scene = new Scene(root, 500, 600);
             //  scene.getStylesheets().add(getClass().getResource("application.css").toExternalForm());
             Stage secondStage = new Stage();
             secondStage.setScene(scene);

@@ -5,6 +5,7 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
@@ -69,12 +70,18 @@ public class CalculatorController {
                 resultReturned = true;
             }
             else if (btnOp.getText().equals("=")) {
-                displaySumTxt.setText(equation + " " + sum);
-                equation = equation.trim() + " " + sum.trim();
-                calc.Equation(equation);
-                displayTxt.setText("" + calc.EquList());
-                // Set to true if result is shown.
-                resultReturned = true;
+                try {
+                    displaySumTxt.setText(equation + " " + sum);
+                    equation = equation.trim() + " " + sum.trim();
+                    calc.Equation(equation);
+                    displayTxt.setText("" + calc.EquList());
+                    // Set to true if result is shown.
+                    resultReturned = true;
+                }
+                catch (Exception e) {
+                    Alert alert = new Alert(Alert.AlertType.ERROR, "You have made an invalid entry.");
+                    alert.show();
+                }
             }
             else {
                 // Displays the equation on the above the main text field.
