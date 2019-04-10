@@ -17,8 +17,8 @@
         <Button fx:id="btnICe" layoutX="149.0" layoutY="331.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="302.0" text="Inches to Centimeters" />
         <Button fx:id="btnPKi" layoutX="149.0" layoutY="415.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="302.0" text="Pounds to Kilograms" />
         <Button fx:id="btnKiP" layoutX="149.0" layoutY="454.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="302.0" text="Kilograms to Pounds" />
-        <Button fx:id="btnClear" layoutX="107.0" layoutY="495.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Clear" />
-        <Button fx:id="btnBackCalc" layoutX="190.0" layoutY="540.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="209.0" text="Go back to calculator" />
+        <Button fx:id="btnClear" layoutX="251.0" layoutY="503.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="Clear" />
+        <Button fx:id="btnBackCalc" layoutX="200.0" layoutY="546.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="209.0" text="Go back to calculator" />
         <Label layoutX="222.0" layoutY="14.0" prefHeight="31.0" prefWidth="179.0" text="Data transformation">
             <font>
                 <Font name="System Bold" size="18.0" />
@@ -34,9 +34,7 @@
                 <Font name="System Bold Italic" size="15.0" />
             </font>
         </Label>
-        <Button fx:id="btnSave" layoutX="236.0" layoutY="495.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="128.0" text="Save result" />
         <TextField fx:id="onMath" layoutX="212.0" layoutY="125.0" prefHeight="31.0" prefWidth="92.0" text="0" />
         <Label layoutX="95.0" layoutY="130.0" text="Decimal places" />
-        <Button fx:id="btnHistory" layoutX="395.0" layoutY="495.0" mnemonicParsing="false" prefHeight="31.0" prefWidth="99.0" text="History" />
     </children>
 </AnchorPane>

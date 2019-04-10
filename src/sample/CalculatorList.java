@@ -30,9 +30,7 @@ public class CalculatorList {
             num1 = Double.parseDouble(firstNumber);
             oper = calcArr[1];
             equationList.add(new Calculator(num1, oper));
-        }
-
-        else {
+        } else {
             String firstNumber = calcArr[0];
             num1 = Double.parseDouble(firstNumber);
             oper = calcArr[1];
@@ -42,8 +40,7 @@ public class CalculatorList {
                 calcArr[2] = calcArr[2].replaceFirst("%", "");
                 String SecondNumber = calcArr[2];
                 num2 = Double.parseDouble(SecondNumber) / 100;
-            }
-            else {
+            } else {
                 // If third character is a number only pass equation to
                 // ArrayList.
                 String SecondNumber = calcArr[2];
@@ -61,6 +58,7 @@ public class CalculatorList {
         }
         return equationList.size();
     }
+
     public void EquTest() {
         for (int i = 0; i < equationList.size(); i++) {
             System.out.println("Array is " + equationList.get(i));

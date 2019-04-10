@@ -1,10 +1,12 @@
 package sample;
+
 import javafx.scene.control.Alert;
 
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
+
 public class HistoryList {
     // Reference to CalculatorList.
     private CalculatorList calc = CalculatorController.calc;
@@ -20,8 +22,7 @@ public class HistoryList {
                 Calculator list = calc.equationList.get(i);
                 writer.println(list.getNumber1() + " " + list.getOperation() + " " + list.getNumber2());
             }
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "File not found. Please try again.");
             alert.show();
         } finally {
@@ -57,8 +58,7 @@ public class HistoryList {
                 Calculator equation = new Calculator(firstNumber, operator, secondNumber);
                 calc.equationList.add(equation);
             }
-        }
-        catch (FileNotFoundException e) {
+        } catch (FileNotFoundException e) {
             Alert alert = new Alert(Alert.AlertType.ERROR, "File not found. Please try again.");
             alert.show();
         } finally {

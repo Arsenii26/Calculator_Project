@@ -184,7 +184,7 @@ public class CalculatorController {
             // Sets the stage icon
             secondStage.getIcons().add(new Image(getClass().getResourceAsStream("ico/calculator.png")));
             // Set the stage title
-            secondStage.setTitle("Calculator History");
+            secondStage.setTitle("Transformation");
             secondStage.setScene(scene);
             secondStage.initModality(Modality.APPLICATION_MODAL);
             secondStage.showAndWait();

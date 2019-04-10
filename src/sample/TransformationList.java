@@ -1,34 +1,18 @@
 package sample;
 
-import java.util.ArrayList;
 
 public class TransformationList {
-    private double num;
+    private double num; //value witch been entered by user for calculations
+
 
     /**
-     * Array list witch stores Transformation objects
+     * Constructor
      */
-    ArrayList<Transformation> _list = new ArrayList<Transformation>();
-
-    /**
-     * Constructors
-     */
-    public TransformationList() {
-
-    }
 
     public TransformationList(double num) {
         this.num = num;
     }
 
-
-    /**
-     * load method takes Transformation object and store it into array list
-     */
-    public void load(String from, String to) {
-        // _list.clear();
-        _list.add(new Transformation(from, to));
-    }
 
     /**
      * Calculate Celsius to Fahrenheit using basic formula with possibility calculate up to 16 decimal places
@@ -93,5 +77,6 @@ public class TransformationList {
         String digits = "%." + String.valueOf(quantity) + "f";
         return Double.parseDouble(String.format(digits, ((((num * 2.2046) * 10) / 10))));
     }
+
 
 }
