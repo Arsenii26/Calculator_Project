@@ -1,16 +1,19 @@
-
-.button {
+.buttonOther {
     -fx-pref-height: 50px;
     -fx-pref-width: 100px;
-    -fx-font-size: 20px;
-    -fx-font-weight: bold;
+/*    -fx-font-size: 20px;
+    -fx-font-weight: bold; */
 }
 .btnDataTrans {
-    -fx-pref-width: 337px;
+	-fx-pref-height: 50px;
+	-fx-pref-width: 337px;
+/*	-fx-font-size: 20px;
+    -fx-font-weight: bold; */
 }
 .buttonHistory {
-    -fx-pref-height: 50px;
-    -fx-pref-width: 200px;
-    -fx-font-size: 18px;
-    -fx-font-weight: bold;
+
+	-fx-pref-width: 100px;
+ 	-fx-pref-height: 50px;
+/*    -fx-font-size: 20px;
+	-fx-font-weight: bold; */
 }

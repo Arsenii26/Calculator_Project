@@ -1,8 +1,8 @@
 package sample;
-
 import java.util.ArrayList;
 
 public class CalculatorList {
+
     private String _buttonTitle; // Main window to second window
 
     public String getButtonTitle() {
@@ -30,7 +30,9 @@ public class CalculatorList {
             num1 = Double.parseDouble(firstNumber);
             oper = calcArr[1];
             equationList.add(new Calculator(num1, oper));
-        } else {
+        }
+
+        else {
             String firstNumber = calcArr[0];
             num1 = Double.parseDouble(firstNumber);
             oper = calcArr[1];
@@ -40,7 +42,8 @@ public class CalculatorList {
                 calcArr[2] = calcArr[2].replaceFirst("%", "");
                 String SecondNumber = calcArr[2];
                 num2 = Double.parseDouble(SecondNumber) / 100;
-            } else {
+            }
+            else {
                 // If third character is a number only pass equation to
                 // ArrayList.
                 String SecondNumber = calcArr[2];
@@ -50,21 +53,6 @@ public class CalculatorList {
         }
 
     }
-
-    // START TESTING CODE //
-    public int Equat() {
-        for (int count = 0; count < equationList.size(); count++) {
-            System.out.println(equationList.size());
-        }
-        return equationList.size();
-    }
-
-    public void EquTest() {
-        for (int i = 0; i < equationList.size(); i++) {
-            System.out.println("Array is " + equationList.get(i));
-        }
-    }
-    // END TESTING CODE //
 
     public double EquList() {
         // Switch statement to calculate numbers and return result.
@@ -77,24 +65,24 @@ public class CalculatorList {
             double number2 = calc.getNumber2();
 
             switch (operator) {
-                case "+":
-                    total = number1 + number2;
-                    break;
-                case "-":
-                    total = number1 - number2;
-                    break;
-                case "×":
-                    total = number1 * number2;
-                    break;
-                case "÷":
-                    total = number1 / number2;
-                    break;
-                case "x²":
-                    total = Math.pow(number1, 2);
-                    break;
-                case "√":
-                    total = Math.sqrt(number1);
-                    break;
+            case "+":
+                total = number1 + number2;
+                break;
+            case "-":
+                total = number1 - number2;
+                break;
+            case "×":
+                total = number1 * number2;
+                break;
+            case "÷":
+                total = number1 / number2;
+                break;
+            case "x²":
+                total = Math.pow(number1, 2);
+                break;
+            case "√":
+                total = Math.sqrt(number1);
+                break;
             }
         }
         return total;
