@@ -1,17 +1,18 @@
 package sample;
+
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
 import javafx.scene.Scene;
-import javafx.scene.control.Alert;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
+
 public class CalculatorController {
     @FXML
     private Button btnOperator;
@@ -58,6 +59,7 @@ public class CalculatorController {
         if (event.getSource() instanceof Button) {
             Button btnOp = (Button) event.getSource();
             operator = btnOp.getText();
+
             // Clear large text from display after number is entered.
             displayTxt.clear();
 
@@ -79,8 +81,7 @@ public class CalculatorController {
                     resultReturned = true;
                 }
                 catch (Exception e) {
-                    Alert alert = new Alert(Alert.AlertType.ERROR, "You have made an invalid entry.");
-                    alert.show();
+
                 }
             }
             else {
@@ -129,9 +130,9 @@ public class CalculatorController {
             else {
                 displayTxt.setText(displayTxt.getText() + btnTxt.getText());
             }
+            // Save displayed number to sum.
             sum = displayTxt.getText();
         }
-
     }
 
 
@@ -172,31 +173,35 @@ public class CalculatorController {
     private void onDeleteClicked() {
         if (displayTxt.getText().length() > 0) {
             displayTxt.setText(displayTxt.getText(0, displayTxt.getText().length() - 1));
+            sum = displayTxt.getText();
         }
     }
 
     private void onDataTransClicked() {
         try {
             AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("Transformation.fxml"));
-            Scene scene = new Scene(root, 600, 600);
-            //scene.getStylesheets().add(getClass().getResource("Calculator.css").toExternalForm());
+            Scene scene = new Scene(root, 500, 600);
+            scene.getStylesheets().add(getClass().getResource("Calculator.css").toExternalForm());
             Stage secondStage = new Stage();
             // Sets the stage icon
             secondStage.getIcons().add(new Image(getClass().getResourceAsStream("ico/calculator.png")));
             // Set the stage title
-            secondStage.setTitle("Transformation");
+            secondStage.setTitle("Calculator - Data Transformation");
             secondStage.setScene(scene);
             secondStage.initModality(Modality.APPLICATION_MODAL);
             secondStage.showAndWait();
-        } catch (Exception e) {
+        }
+        catch (Exception e) {
             e.printStackTrace();
+            return;
         }
     }
 
     @FXML
+    // On click call History Controller.
     protected void onHistoryClicked(ActionEvent event) throws IOException {
         // Set the extra data to pass to the second controller
-        calc.setButtonTitle("Return to Data Transformation");
+        calc.setButtonTitle("Return to Calculator");
 
         try {
             AnchorPane root = (AnchorPane) FXMLLoader.load(getClass().getResource("History.fxml"));
@@ -217,6 +222,5 @@ public class CalculatorController {
         }
 
     }
-
 
 }
