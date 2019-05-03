@@ -9,7 +9,6 @@ import javafx.scene.control.TextArea;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-
 public class TransformationController {
     @FXML
     private Button btnCFa; //Celsius to Fahrenheit
@@ -38,6 +37,11 @@ public class TransformationController {
     @FXML
     private TextField onMath; //Number of decimal places
 
+
+    private double number; // value which been entered for transformation
+    private int round; //number of decimal places
+
+    private Transformation transformation = new Transformation(number); //object of Transformation  class
 
     // This method is automatically called when the window opens, after the FXML file has been loaded.
     @FXML
@@ -100,35 +104,38 @@ public class TransformationController {
      * This method gets value from first text field and transfer it to double value. Otherwise throws exception and shows alert dialog
      */
 
-    private double numDoub(String string) {
-        double number = 0.0;
+    private void numDoub() {
+        String num = onEnterValue.getText();
         try {
-            number = Double.parseDouble(string);
-        } catch (Exception e) {
+            number = Double.parseDouble(num);
+        } catch (NumberFormatException e) {
+            number = 0; //clear the buffer, setting it to 0
+            onEnterValue.setText(0 + ""); //setting value to 0 that the user doesn't accidentally receive an error again
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Value error");
             alert.setHeaderText("Error");
             alert.setContentText("Ooops, wrong number been entered into value filed, please try again!");
             alert.showAndWait();
         }
-        return number;
     }
 
     /**
      * This method gets value from second text field and transfer it to integer value. Otherwise throws exception and shows alert dialog
      */
-    private int numPlac(String numb) {
-        int round = 0;
+    private void numPlac() {
+        String decimalPlaces = onMath.getText();
         try {
-            round = Integer.parseInt(numb);
-        } catch (Exception e) {
+            round = Integer.parseInt(decimalPlaces);
+        } catch (NumberFormatException e) {
+            round = 0; //clear the buffer, setting it to 0
+            onMath.setText(0 + ""); //setting value to 0 that the user doesn't accidentally receive an error again
             Alert alert = new Alert(Alert.AlertType.ERROR);
             alert.setTitle("Decimal places error");
             alert.setHeaderText("Error");
             alert.setContentText("Ooops, wrong number been entered into decimal places filed, please try again!");
             alert.showAndWait();
         }
-        return round;
+
     }
 
 
@@ -137,11 +144,8 @@ public class TransformationController {
      * transformationList class Celsius_to_Fahrenheit
      */
     private void calcCelsiustoFahrenheit() {
-        String value = onEnterValue.getText();
-        String decimalPlaces = onMath.getText();
-        Double number = numDoub(value);
-        Integer round = numPlac(decimalPlaces);
-        Transformation transformation = new Transformation(number);
+        numDoub();
+        numPlac();
         onGetResult.setText(transformation.Celsius_to_Fahrenheit(number, round) + "");
     }
 
@@ -150,11 +154,8 @@ public class TransformationController {
      * transformationList class Fahrenheit_to_Celsius
      */
     private void calcFahrenheittoCelsius() {
-        String value = onEnterValue.getText();
-        String decimalPlaces = onMath.getText();
-        Double number = numDoub(value);
-        Integer round = numPlac(decimalPlaces);
-        Transformation transformation = new Transformation(number);
+        numDoub();
+        numPlac();
         onGetResult.setText(transformation.Fahrenheit_to_Celsius(number, round) + "");
     }
 
@@ -163,11 +164,8 @@ public class TransformationController {
      * transformationList class Feet_to_Meters
      */
     private void calcFeettoMeters() {
-        String value = onEnterValue.getText();
-        String decimalPlaces = onMath.getText();
-        Double number = numDoub(value);
-        Integer round = numPlac(decimalPlaces);
-        Transformation transformation = new Transformation(number);
+        numDoub();
+        numPlac();
         onGetResult.setText(transformation.Feet_to_Meters(number, round) + "");
     }
 
@@ -176,11 +174,8 @@ public class TransformationController {
      * transformationList class Meters_to_Feet
      */
     private void calcMeterstoFeet() {
-        String value = onEnterValue.getText();
-        String decimalPlaces = onMath.getText();
-        Double number = numDoub(value);
-        Integer round = numPlac(decimalPlaces);
-        Transformation transformation = new Transformation(number);
+        numDoub();
+        numPlac();
         onGetResult.setText(transformation.Meters_to_Feet(number, round) + "");
     }
 
@@ -189,11 +184,8 @@ public class TransformationController {
      * transformationList class Inches_to_Centimeters
      */
     private void calcInchestoCentimeters() {
-        String value = onEnterValue.getText();
-        String decimalPlaces = onMath.getText();
-        Double number = numDoub(value);
-        Integer round = numPlac(decimalPlaces);
-        Transformation transformation = new Transformation(number);
+        numDoub();
+        numPlac();
         onGetResult.setText(transformation.Inches_to_Centimeters(number, round) + "");
     }
 
@@ -202,11 +194,8 @@ public class TransformationController {
      * transformationList class Centimeters_to_Inches
      */
     private void calcCentimeterstoInches() {
-        String value = onEnterValue.getText();
-        String decimalPlaces = onMath.getText();
-        Double number = numDoub(value);
-        Integer round = numPlac(decimalPlaces);
-        Transformation transformation = new Transformation(number);
+        numDoub();
+        numPlac();
         onGetResult.setText(transformation.Centimeters_to_Inches(number, round) + "");
     }
 
@@ -215,11 +204,8 @@ public class TransformationController {
      * transformationList class Pounds_to_Kilograms
      */
     private void calcPoundstoKilograms() {
-        String value = onEnterValue.getText();
-        String decimalPlaces = onMath.getText();
-        Double number = numDoub(value);
-        Integer round = numPlac(decimalPlaces);
-        Transformation transformation = new Transformation(number);
+        numDoub();
+        numPlac();
         onGetResult.setText(transformation.Pounds_to_Kilograms(number, round) + "");
     }
 
@@ -228,11 +214,8 @@ public class TransformationController {
      * transformationList class Kilograms_to_Pounds
      */
     private void calcKilogramstoPounds() {
-        String value = onEnterValue.getText();
-        String decimalPlaces = onMath.getText();
-        Double number = numDoub(value);
-        Integer round = numPlac(decimalPlaces);
-        Transformation transformation = new Transformation(number);
+        numDoub();
+        numPlac();
         onGetResult.setText(transformation.Kilograms_to_Pounds(number, round) + "");
     }
 
@@ -250,7 +233,7 @@ public class TransformationController {
     /**
      * Close the window "Transformation" and back to calculator
      */
-    private void onBackToCalc() {  //clearing all textFields and textArea inside the window
+    private void onBackToCalc() {  //returns back to the calculator window
         try {
             Stage stage = (Stage) btnBackCalc.getScene().getWindow();
             // Close the window
@@ -262,4 +245,3 @@ public class TransformationController {
     }
 
 }
-

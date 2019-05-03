@@ -1,16 +1,21 @@
 package sample;
 
-import javafx.scene.control.Alert;
-
 import java.io.File;
 import java.io.FileNotFoundException;
 import java.io.PrintWriter;
 import java.util.Scanner;
 
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
+/**
+ * This class contains I/O to the file
+ */
 public class HistoryList {
+
     // Reference to CalculatorList.
     private CalculatorList calc = CalculatorController.calc;
 
+    // Save array list to file when called.
     public void CalculatorListSave() {
         PrintWriter writer = null;
         try {
@@ -22,11 +27,14 @@ public class HistoryList {
                 Calculator list = calc.equationList.get(i);
                 writer.println(list.getNumber1() + " " + list.getOperation() + " " + list.getNumber2());
             }
-        } catch (FileNotFoundException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "File not found. Please try again.");
+        }
+        catch (FileNotFoundException e) {
+            Alert alert = new Alert(AlertType.ERROR, "File not found. Please try again.");
             alert.show();
         } finally {
-            writer.close();
+            if (writer != null) {
+                writer.close();
+            }
         }
 
     }
@@ -58,8 +66,9 @@ public class HistoryList {
                 Calculator equation = new Calculator(firstNumber, operator, secondNumber);
                 calc.equationList.add(equation);
             }
-        } catch (FileNotFoundException e) {
-            Alert alert = new Alert(Alert.AlertType.ERROR, "File not found. Please try again.");
+        }
+        catch (FileNotFoundException e) {
+            Alert alert = new Alert(AlertType.ERROR, "File not found. Please try again.");
             alert.show();
         } finally {
             if (reader != null) {

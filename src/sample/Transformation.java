@@ -1,6 +1,8 @@
 package sample;
 
-
+/**
+ * This class contains basic formulas for data transformations
+ */
 public class Transformation {
     private double num; //value witch been entered by user for calculations
 
@@ -77,6 +79,5 @@ public class Transformation {
         String digits = "%." + String.valueOf(quantity) + "f";
         return Double.parseDouble(String.format(digits, ((((num * 2.2046) * 10) / 10))));
     }
-
 
 }

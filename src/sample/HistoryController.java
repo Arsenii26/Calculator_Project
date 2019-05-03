@@ -1,5 +1,6 @@
 package sample;
 
+
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.ListView;
@@ -8,6 +9,8 @@ import javafx.stage.Stage;
 public class HistoryController {
     @FXML
     private Button btnClear;
+    @FXML
+    private Button btnSave;
     @FXML
     private Button btnReturn;
     @FXML
@@ -18,8 +21,9 @@ public class HistoryController {
 
     @FXML
     private void initialize() {
-        btnReturn.setOnAction(e -> onReturnClicked());
-        btnClear.setOnAction(e -> onClearClicked());
+        btnReturn.setOnAction(e -> onReturnClick());
+        btnClear.setOnAction(e -> onClearClick());
+        btnSave.setOnAction(e -> onSaveClick());
         // Set return button text for Calculator.
         btnReturn.setText(calc.getButtonTitle());
 
@@ -30,21 +34,23 @@ public class HistoryController {
     }
 
     @FXML
-    private void onReturnClicked() {
-        // Save history to file when return button is clicked.
-        history.CalculatorListSave();
+    private void onReturnClick() {
         // Get a reference to the stage
         Stage stage = (Stage) btnReturn.getScene().getWindow();
         // Close the window
         stage.close();
     }
 
-    private void onClearClicked() {
+    private void onClearClick() {
         // Clear ArrayList.
         calc.equationList.clear();
         // Clear ListView.
         listArea.getItems().clear();
     }
 
+    private void onSaveClick() {
+        // Save history to file.
+        history.CalculatorListSave();
+    }
 
 }

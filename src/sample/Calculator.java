@@ -1,6 +1,9 @@
 package sample;
-
+/**
+ * This class contains fields for the calculator class
+ */
 public class Calculator {
+
     private double _number1; // First number.
     private String _operation; // Equation operation.
     private double _number2; // Second number.
@@ -38,4 +41,3 @@ public class Calculator {
         }
     }
 }
-
