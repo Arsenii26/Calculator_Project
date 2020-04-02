@@ -7,7 +7,7 @@ import javafx.scene.image.Image;
 import javafx.scene.layout.AnchorPane;
 import javafx.stage.Stage;
 
-
+// GUI calculator Sheridan - Java 2 final project
 public class Main extends Application {
     @Override
     public void start(Stage primaryStage) {
